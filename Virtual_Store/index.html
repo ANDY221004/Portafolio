@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title> Fashion Store | E-commerce</title>
+    <link rel="stylesheet" href="styles.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏪</text></svg>">    
+</head>
+<body>
+    <div style="display: none;">
+        <img id="img-camiseta" src="ROPA DE TIENDA/Polo hombre.jpeg" alt="Camiseta Básica">
+        <img id="img-jeans" src="ROPA DE TIENDA/Pantalon hombre.jpeg" alt="Pantalón Cargo">
+        <img id="img-vestido" src="ROPA DE TIENDA/images.jpeg" alt="Pantalón Slim Fit">
+        <img id="img-sudadera" src="ROPA DE TIENDA/Cmisa hombre.jpeg" alt="Camisa en resort con tejido texturizado">
+        <img id="img-sudadera-nueva" src="ROPA DE TIENDA/POLERA DEPORTIVA.jpeg" alt="Polera de tela ligera deportiva">
+    <img id="img-jeans-clasicos" src="ROPA DE TIENDA/JOYA HOMBRE.jpg" alt="Joya de plata con diseño de dragon">
+    <img id="img-camisa-formal" src="ROPA DE TIENDA/Camisa formal.jpeg" alt="Camisa formal">
+    <img id="img-chaqueta" src="ROPA DE TIENDA/CHAQUETA DE CUERO.jpg" alt="Chaqueta de cuero básica">
+    <img id="img-zapatilla" src="ROPA DE TIENDA/ZAPATILLAS DEPORTIVAS.jpeg" alt="Zapatilla deportivas">
+    <img id="img-shorts" src="ROPA DE TIENDA/SHORT DEPORTIVO.jpeg" alt="Shorts Deportivos">
+    <img id="img-accesorio" src="ROPA DE TIENDA/Collar corazon mujer.jpg" alt="Collar con forma de corazón para mujer">
+    <img id="img-cardigan" src="ROPA DE TIENDA/CARDIGAN MUJER.jpg" alt="Cardigan para mujer en color negro">
+    <img id="img-reloj" src="ROPA DE TIENDA/RELOJ FORMAL HOMBRE.jpg" alt="Reloj para hombre">
+    <img id="img-polo" src="ROPA DE TIENDA/POLO FORMAL.jpg" alt="Polo camisero formal">
+    <img id="img-casaca" src="ROPA DE TIENDA/CASACA DEPORTIVA.jpg" alt="Casaca deportiva para hombre">
+    <img id="img-pantalon" src="ROPA DE TIENDA/PANTALON FORMAL BEIGE MUJER.jpg" alt="Pantalon formal color beige para mujer">
+    <img id="img-collar" src="ROPA DE TIENDA/COLLAR DE HOMBRE NEGRO.jpg" alt="Collar plateado con diseño">
+        
+    </div>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo"><a href="index.html" id="logoLink">Fashion Store</a></div>
+          
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒
+                <span class="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+    <div class="search-container">
+        <form id="searchForm" onsubmit="return false;">
+        <input type="text" 
+        class="search-input"
+        placeholder="Buscar productos..." 
+        autocomplete="off"
+        > 
+        <button class="search-button">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+    
+    <!-- Sección Hero -->
+     
+    <div id="heroSlider" class="hero-slider">
+        <div class="slide active">
+          <img src="ROPA DE TIENDA/REMERAS OFERTA.jpg" alt="Imagen Promocional 1">
+          <div class="slide-content">                   
+          </div>
+        </div>
+        <div class="slide">
+          <img src="ROPA DE TIENDA/SALE SALE SALE.jpg" alt="Imagen Promocional 2">
+          <div class="slide-content">
+          </div>
+        </div>
+        <div class="slide">
+          <img src="ROPA DE TIENDA/PROMOCION.jpg" alt="Imagen Promocional 3">
+          <div class="slide-content">
+
+        </div>
+        </div>
+      </div>
+
+<!-- Sección Categorías -->
+<section class="categories">
+    <h2>Categorías Populares</h2>
+    <div class="category-filters">
+        
+      
+    </div>
+    
+    <div class="category-grid">
+        <div class="category-item" onclick="filterByCategory('casual')">
+            <img src="ROPA DE TIENDA/ROPA CASUAL.jpeg" alt="Ropa Casual">
+            <div class="category-name">Ropa Casual</div>
+        </div>
+        <div class="category-item" onclick="filterByCategory('deportiva')">
+            <img src="ROPA DE TIENDA/DEPORTIVA.jpeg" alt="Deportiva">
+            <div class="category-name">Deportiva</div>
+        </div>
+        <div class="category-item" onclick="filterByCategory('formal')">
+            <img src="ROPA DE TIENDA/FORMAL.jpg" alt="Formal">
+            <div class="category-name">Formal</div>
+        </div>
+        <div class="category-item" onclick="filterByCategory('accesorios')">
+            <img src="ROPA DE TIENDA/ACCESORIOS.jpeg" alt="Accesorios">
+            <div class="category-name">Accesorios</div>
+        </div>
+    </div>
+    <div class="category-grid">
+        <div class="category-item" onclick="filterByCategory('todos')">
+            <img src="ROPA DE TIENDA/LOGO DE VER TODO.jpg" alt="Ver todp">
+            <div class="category-name">Ver todo</div>
+
+
+    </div>
+</section>
+
+    <main class="products" id="products">
+       
+    </main>
+
+    <div class="cart-modal" id="cartModal">
+        <h2>Carrito de Compras</h2>
+        <div id="cartItems"></div>
+        <div class="cart-item">
+            <span class="item-name">Nombre del Producto</span>
+            <button class="remove-item" onclick="removeFromCart('id-del-producto')">Eliminar</button>
+        </div>
+        <div id="cartTotal"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <div id="quickViewModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Product image">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalPrice" class="modal-price"></p>
+                    <p id="modalDescription" class="modal-description"></p>
+                    <button id="modalAddToCart" class="add-to-cart">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Acerca de Nosotros</h4>
+            <p>En Fashion Store, somos más que una tienda de ropa. Ofrecemos estilo, comodidad y calidad en cada prenda. Inspirados en las últimas tendencias, creamos opciones para destacar en cualquier ocasión, ya sea casual, formal o deportiva. ¡Vístete con confianza y celebra tu esencia única con nosotros!</p>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Enlaces Rápidos</h4>
+            <ul>
+                <li><a href="categorías">Categorías</a></li>
+                <li><a href="#ofertas">Ofertas</a></li>
+                <li><a href="#nuevos">Nuevos Productos</a></li>
+                <li><a href="#populares">Más Populares</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Atención al Cliente</h4>
+            <ul>
+                <li><a href="#contacto">Contáctanos</a></li>
+                <li><a href="#envios">Envíos</a></li>
+                <li><a href="#devoluciones">Devoluciones</a></li>
+                <li><a href="#preguntas">Preguntas Frecuentes</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Síguenos en:</h4>
+            <div class="social-icons">
+                <a href="#" class="social-icon">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Fashion Store. Todos los derechos reservados.</p>
+    </div>
+</footer>
+</html>
