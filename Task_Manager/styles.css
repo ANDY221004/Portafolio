@@ -1,0 +1,78 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #424242;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #565656;
+}
+
+.tareas-container {
+    margin-top: 20px;
+}
+
+.tareas-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tareas-list li {
+    background-color: #2d3436;
+    margin: 10px 0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.delete-icon {
+    color: #e74c3c;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    background: none;
+    cursor: pointer;
+}
+
+.delete-icon:hover {
+    background: none;
+    color: #c0392b;
+}
+
+.check-icon {
+    color: #2ecc71;
+    font-size: 1.5em;
+    padding: 5px 10px;
+}
+
+#tareas-cumplidas li {
+    opacity: 0.8;
+    background-color: #1a1a1a;
+}
